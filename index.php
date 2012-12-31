@@ -21,6 +21,14 @@ class DPA {
                 $url_options .= 'limit=' . $aData['limit'];
             if ($aData['offset'])
                 $url_options .= '&offset=' . $aData['offset'];
+            if ($aData['geolocation']==FALSE) {
+                $separador = strlen($url_options) ? '&' : '';
+                $url_options .= $separador.'geolocation=' . $aData['geolocation'];
+            }
+            if ($aData['callback']) {
+                $separador = strlen($url_options) ? '&' : '';
+                $url_options .= $separador.'callback=' . $aData['callback'];
+            }
         }
 
         return $url_options;
