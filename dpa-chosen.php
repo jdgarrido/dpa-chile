@@ -20,14 +20,14 @@ require_once 'index.php';
                     $aData['codigo'] = $r->codigo;
                     $aProvincias = $objDPA->RegionProvincias($aData);
                     foreach ($aProvincias as $p) :
-                        echo (count($aProvincias)) ? '<optgroup label="' . $r->nombre . ' - ' . $p->nombre . '">' : '';
+                        echo (count($aProvincias)) ? '<optgroup label="' . $r->nombre . ' - ' . $p->nombre . '">'."\n\r" : '';
                         $aData['codigo'] = $p->codigo;
                         $aData['limit'] = 10;
                         $aComunas = $objDPA->ProvinciaComunas($aData);
                         foreach ($aComunas as $c):
-                            echo '<option>' . $c->nombre . '</option>';
+                            echo '<option>' . $c->nombre . '</option>'."\n\r";
                         endforeach;
-                        echo '</optgroup>';
+                        echo '</optgroup>'."\n\r";
                     endforeach;
                 endforeach;
                 ?>
