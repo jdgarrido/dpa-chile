@@ -11,7 +11,7 @@ require_once 'index.php';
     </head>
     <body>
         <div>
-            <select data-placeholder="Selecciona una comuna" style="width:350px;" class="chzn-select" multiple tabindex="-1">
+            <select data-placeholder="Selecciona una comuna" style="width:350px;" class="chzn-select" tabindex="-1">
                 <option value=""></option>
                 <?php
                 $objDPA = new DPA();
@@ -20,7 +20,7 @@ require_once 'index.php';
                     $aData['codigo'] = $r->codigo;
                     $aProvincias = $objDPA->RegionProvincias($aData);
                     foreach ($aProvincias as $p) :
-                        echo (count($aProvincias)) ? '<optgroup label="' . $p->nombre . '">' : '';
+                        echo (count($aProvincias)) ? '<optgroup label="' . $r->nombre . ' - ' . $p->nombre . '">' : '';
                         $aData['codigo'] = $p->codigo;
                         $aData['limit'] = 10;
                         $aComunas = $objDPA->ProvinciaComunas($aData);
