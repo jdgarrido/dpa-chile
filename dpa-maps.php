@@ -1,5 +1,5 @@
 <?php
-require_once 'index.php';
+require_once 'dpa-api.php';
 $objDPA = new DPA();
 ?>
 <!DOCTYPE html>

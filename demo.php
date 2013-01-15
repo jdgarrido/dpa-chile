@@ -1,10 +1,10 @@
 <?php
-require_once 'index.php';
+require_once 'dpa-api.php';
 /*
  * Ejemplo de uso de DPA con limite de 5 por defecto
  */
 
-$aData = array('limit' => 5, 'offset' => 0);
+$aData = array('limit' => 0, 'offset' => 0, 'geolocation' => TRUE, 'callback' => '');
 ?>
 <h1>DPA, División Político Administrativo</h1>
 <ul>

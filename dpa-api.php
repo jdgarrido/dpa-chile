@@ -21,7 +21,7 @@ class DPA {
                 $url_options .= 'limit=' . $aData['limit'];
             if ($aData['offset'])
                 $url_options .= '&offset=' . $aData['offset'];
-            if ($aData['geolocation']==FALSE) {
+            if ($aData['geolocation']==TRUE) {
                 $separador = strlen($url_options) ? '&' : '';
                 $url_options .= $separador.'geolocation=' . $aData['geolocation'];
             }
